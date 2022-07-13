@@ -1,0 +1,40 @@
+
+<Page actionBarHidden="true">
+<!--
+
+    <GridLayout *ngIf="!connectionType">
+
+       &lt;!&ndash; <Image src="res://logo" stretch="aspectFill"/>
+
+        <Label text="La connexion internet à été perdue, vérifier votre connexion et reéssayer"
+               class="h2 text-center" verticalAlignment="center"></Label>&ndash;&gt;
+
+    </GridLayout>
+
+        <Image src="~/images/wifi_off.png"></Image>
+
+-->
+
+        <GridLayout columns="*">
+
+                <WebView #webview
+                         (loaded)="onWebViewLoaded($event)"
+                         (loadFinished)="onLoadFinished($event)"
+                         (loadStarted)="onLoadStarted($event)"
+                         src="https://www.ehwhlinmi-assurance.com/">
+                </WebView>
+
+
+                <ActivityIndicator
+                        *ngIf="isStarted" busy="true"
+                        color="aqua" width="70" height="70">
+                </ActivityIndicator>
+
+
+        </GridLayout>
+
+
+
+
+</Page>
+
